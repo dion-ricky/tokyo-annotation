@@ -1,6 +1,9 @@
+import json
 import unittest
 
 from tokyo_annotation.utils import LinkedList, Node, Map, DiGraph
+from tokyo_annotation.utils.lineage import parse_lineage_from_marquez
+from tokyo_annotation.models.lineage import DataNode, JobNode
 
 class TestUtils(unittest.TestCase):
     def test_node_data(self):
@@ -373,3 +376,30 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(digraph1.get_upstream(3), ["B", "C"])
         self.assertEqual(digraph1.get_upstream(4), ["D"])
         self.assertEqual(digraph1.get_upstream(5), ["E"])
+
+    def test_parse_lineage_from_marquez(self):
+        _f = open('documentation/get_lineage', 'r')
+        lineage = parse_lineage_from_marquez(_f.read())
+        _f.close()
+        
+        graph = lineage.graph
+        map = graph.nodes.map
+
+        self.assertEqual(graph.dimension, 7)
+
+        self.assertEqual(map[0], DataNode(id='dataset:bigquery://dionricky-personal:source.actor', type='DATASET'))
+        self.assertEqual(map[1], DataNode(id='dataset:file://11500c6cc2bb:dag_dvdrental_export_actor', type='DATASET'))
+        self.assertEqual(map[2], DataNode(id='dataset:gs://dionricky-personal:tokyo-skripsi.upload_actor', type='DATASET'))
+        self.assertEqual(map[3], DataNode(id='dataset:postgres://source-db:5432:dvdrental.public.actor', type='DATASET'))
+        self.assertEqual(map[4], JobNode(id='job:example:dag_dvdrental.export_actor', type='JOB'))
+        self.assertEqual(map[5], JobNode(id='job:example:dag_dvdrental.load_actor', type='JOB'))
+        self.assertEqual(map[6], JobNode(id='job:example:dag_dvdrental.upload_actor', type='JOB'))
+
+        self.assertEqual(graph.get_downstream_index(3), [4])
+        self.assertEqual(graph.get_downstream_index(4), [1])
+        self.assertEqual(graph.get_downstream_index(1), [6])
+        self.assertEqual(graph.get_downstream_index(6), [2])
+        self.assertEqual(graph.get_downstream_index(2), [5])
+        self.assertEqual(graph.get_downstream_index(5), [0])
+        self.assertEqual(graph.get_downstream_index(0), [])
+        self.assertEqual(graph.get_upstream_index(3), [])
