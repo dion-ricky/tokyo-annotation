@@ -1,4 +1,3 @@
-from platform import node
 import unittest
 
 from tokyo_annotation.utils import LinkedList, Node, Map, DiGraph
