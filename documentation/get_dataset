@@ -1,0 +1,73 @@
+{
+    "id": {
+        "namespace": "bigquery://dionricky-personal",
+        "name": "source.actor"
+    },
+    "type": "DB_TABLE",
+    "name": "source.actor",
+    "physicalName": "source.actor",
+    "createdAt": "2022-03-21T03:27:35.320837Z",
+    "updatedAt": "2022-03-21T03:58:04.993171Z",
+    "namespace": "bigquery://dionricky-personal",
+    "sourceName": "bigquery://dionricky-personal",
+    "fields": [
+        {
+            "name": "actor_id",
+            "type": "int64",
+            "tags": [],
+            "description": null
+        },
+        {
+            "name": "first_name",
+            "type": "string",
+            "tags": [],
+            "description": null
+        },
+        {
+            "name": "last_name",
+            "type": "string",
+            "tags": [],
+            "description": null
+        },
+        {
+            "name": "last_update",
+            "type": "timestamp",
+            "tags": [],
+            "description": null
+        }
+    ],
+    "tags": [],
+    "lastModifiedAt": null,
+    "description": null,
+    "currentVersion": "5457282b-7107-43c2-80f4-0856dab8429d",
+    "facets": {
+        "schema": {
+            "fields": [
+                {
+                    "name": "actor_id",
+                    "type": "int64"
+                },
+                {
+                    "name": "first_name",
+                    "type": "string"
+                },
+                {
+                    "name": "last_name",
+                    "type": "string"
+                },
+                {
+                    "name": "last_update",
+                    "type": "timestamp"
+                }
+            ],
+            "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
+            "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/SchemaDatasetFacet"
+        },
+        "dataSource": {
+            "uri": "bigquery://dionricky-personal/source",
+            "name": "bigquery://dionricky-personal",
+            "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
+            "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/DataSourceDatasetFacet"
+        }
+    }
+}
