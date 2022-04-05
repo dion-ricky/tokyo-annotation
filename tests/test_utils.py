@@ -3,7 +3,7 @@ import unittest
 
 from tokyo_annotation.utils import LinkedList, Node, Map, DiGraph
 from tokyo_annotation.utils.lineage import parse_lineage_from_marquez
-from tokyo_annotation.models.lineage import DataNode, JobNode
+from tokyo_annotation.models.node import DataNode, JobNode
 
 class TestUtils(unittest.TestCase):
     def test_node_data(self):
