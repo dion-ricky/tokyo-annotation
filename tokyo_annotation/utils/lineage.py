@@ -2,7 +2,7 @@ import json
 
 from tokyo_annotation.lineage import Lineage
 from tokyo_annotation.utils import DiGraph
-from tokyo_annotation.models.lineage import DataNode, JobNode
+from tokyo_annotation.models.node import DataNode, JobNode
 
 
 def parse_lineage_from_marquez(
