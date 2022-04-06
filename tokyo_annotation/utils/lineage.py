@@ -5,7 +5,7 @@ from tokyo_annotation.utils import DiGraph
 from tokyo_annotation.models.node import DataNode, JobNode
 
 
-def parse_lineage_from_marquez(
+def parse_raw_lineage(
     lineage: str
 ) -> Lineage:
     parsed = json.loads(lineage)

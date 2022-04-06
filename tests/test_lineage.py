@@ -1,6 +1,6 @@
 import unittest
 
-from tokyo_annotation.utils.lineage import parse_lineage_from_marquez
+from tokyo_annotation.utils.lineage import parse_raw_lineage
 
 
 class TestLineage(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestLineage(unittest.TestCase):
         super().__init__(methodName)
 
         _f = open('documentation/get_lineage', 'r')
-        lineage = parse_lineage_from_marquez(_f.read())
+        lineage = parse_raw_lineage(_f.read())
         _f.close()
         
         self.lineage = lineage
@@ -105,7 +105,7 @@ class TestLineage(unittest.TestCase):
     ]
 }
         """
-        lineage = parse_lineage_from_marquez(graph)
+        lineage = parse_raw_lineage(graph)
 
         graph = lineage.graph
 
@@ -211,7 +211,7 @@ class TestLineage(unittest.TestCase):
 }
         """
 
-        lineage = parse_lineage_from_marquez(graph)
+        lineage = parse_raw_lineage(graph)
 
         graph = lineage.graph
 

@@ -2,7 +2,7 @@ import json
 import unittest
 
 from tokyo_annotation.utils import LinkedList, Node, Map, DiGraph
-from tokyo_annotation.utils.lineage import parse_lineage_from_marquez
+from tokyo_annotation.utils.lineage import parse_raw_lineage
 from tokyo_annotation.models.node import DataNode, JobNode
 
 class TestUtils(unittest.TestCase):
@@ -379,7 +379,7 @@ class TestUtils(unittest.TestCase):
 
     def test_parse_lineage_from_marquez(self):
         _f = open('documentation/get_lineage', 'r')
-        lineage = parse_lineage_from_marquez(_f.read())
+        lineage = parse_raw_lineage(_f.read())
         _f.close()
         
         graph = lineage.graph
