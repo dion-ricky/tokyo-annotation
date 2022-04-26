@@ -21,12 +21,12 @@ class Facade:
     def __init__(
         self,
         dataset_id: str,
-        openlineage_adapter: OpenLineageClientFacade
+        openlineage_client: OpenLineageClientFacade
     ) -> None:
         self.dataset_id = dataset_id
-        self.openlineage_adapter = openlineage_adapter
+        self.openlineage_client = openlineage_client
 
-        raw_lineage = Facade.get_raw_lineage(dataset_id, openlineage_adapter)
+        raw_lineage = Facade.get_raw_lineage(dataset_id, openlineage_client)
         self.lineage: Lineage = parse_raw_lineage(raw_lineage)
 
         for node in self.lineage.graph.nodes.map:
@@ -35,19 +35,6 @@ class Facade:
 
     def get_annotation(self):
         pass
-
-    def _get_annotation_recursive(self, node: AnnotatedNode):
-        if node.annotation:
-            return node.annotation
-        else:
-            annotations = []
-            upstream = self.lineage.get_upstream(node.node)
-            
-            for node in upstream:
-                annotations += self._get_annotation_recursive(AnnotatedNode(node))
-            
-            # union the annotations
-            return annotations
 
     def get(self):
         return self.get_annotation()
@@ -59,17 +46,17 @@ class Facade:
         openlineage_url: str,
         openlineage_client_options: Optional[OpenLineageClientOptions] = None
     ):
-        openlineage_adapter = OpenLineageClientFacade.from_url(
+        openlineage_client = OpenLineageClientFacade.from_url(
                                 openlineage_url, openlineage_client_options)
         
-        return cls(openlineage_adapter, dataset_id)
+        return cls(dataset_id, openlineage_client)
     
     @staticmethod
     def get_raw_lineage(
         dataset_id,
-        openlineage_adapter
+        openlineage_client
     ):
-        adapter = openlineage_adapter
+        adapter = openlineage_client
 
         raw_lineage = adapter.get(
             path=ENDPOINT,
