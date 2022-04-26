@@ -3,10 +3,13 @@ from typing import Any, Optional
 
 from openlineage.client import OpenLineageClientOptions
 
-from tokyo_annotation.lineage import Lineage
 from tokyo_annotation.models.node import Node
 from tokyo_annotation.adapter import OpenLineageClientFacade
-from tokyo_annotation.utils.lineage import parse_raw_lineage
+from tokyo_annotation.utils.lineage import (
+    Lineage,
+    parse_raw_lineage,
+    get_genesis_datasets
+)
 
 @attr.s
 class AnnotatedNode:
@@ -28,10 +31,11 @@ class Facade:
 
         raw_lineage = Facade.get_raw_lineage(dataset_id, openlineage_client)
         self.lineage: Lineage = parse_raw_lineage(raw_lineage)
+        self.node = None
 
         for node in self.lineage.graph.nodes.map:
             if node.id == dataset_id:
-                self.node = AnnotatedNode(node=node)
+                self.node = node
 
     def get_annotation(self):
         pass
@@ -65,3 +69,9 @@ class Facade:
         })
 
         return raw_lineage
+    
+    def _get_genesis_datasets(self):
+        if not self.node:
+            return
+        
+        return get_genesis_datasets(self.node, self.lineage)
