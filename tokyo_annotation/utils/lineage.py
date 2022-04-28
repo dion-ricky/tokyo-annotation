@@ -77,7 +77,7 @@ def parse_raw_lineage(
     for node in _graph:
         node_type = DataNode if node['type'] == 'DATASET' else JobNode
         graph.add(
-            node_type(node['id'], node['type'])
+            node_type(node['id'], node['type'], node['data'])
         )
 
     # Connect node's edges

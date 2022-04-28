@@ -1,21 +1,21 @@
 {
     "graph": [
         {
-            "id": "dataset:bigquery://dionricky-personal:source.actor",
+            "id": "dataset:bigquery:source.actor",
             "type": "DATASET",
             "data": {
                 "type": "DATASET",
                 "id": {
-                    "namespace": "bigquery://dionricky-personal",
+                    "namespace": "bigquery",
                     "name": "source.actor"
                 },
                 "type": "DB_TABLE",
                 "name": "source.actor",
                 "physicalName": "source.actor",
-                "createdAt": "2022-03-21T03:27:35.320837Z",
-                "updatedAt": "2022-03-21T03:58:04.993171Z",
-                "namespace": "bigquery://dionricky-personal",
-                "sourceName": "bigquery://dionricky-personal",
+                "createdAt": "2022-04-22T07:17:49.318319Z",
+                "updatedAt": "2022-04-22T08:52:30.073640Z",
+                "namespace": "bigquery",
+                "sourceName": "bigquery",
                 "fields": [
                     {
                         "name": "actor_id",
@@ -49,27 +49,27 @@
             "inEdges": [
                 {
                     "origin": "job:example:dag_dvdrental.load_actor",
-                    "destination": "dataset:bigquery://dionricky-personal:source.actor"
+                    "destination": "dataset:bigquery:source.actor"
                 }
             ],
             "outEdges": []
         },
         {
-            "id": "dataset:file://11500c6cc2bb:dag_dvdrental_export_actor",
+            "id": "dataset:file://f6b614756f19:/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro",
             "type": "DATASET",
             "data": {
                 "type": "DATASET",
                 "id": {
-                    "namespace": "file://11500c6cc2bb",
-                    "name": "dag_dvdrental_export_actor"
+                    "namespace": "file://f6b614756f19",
+                    "name": "/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro"
                 },
                 "type": "DB_TABLE",
-                "name": "dag_dvdrental_export_actor",
-                "physicalName": "dag_dvdrental_export_actor",
-                "createdAt": "2022-03-21T03:25:33.158672Z",
-                "updatedAt": "2022-03-21T03:26:36.055667Z",
-                "namespace": "file://11500c6cc2bb",
-                "sourceName": "file://11500c6cc2bb",
+                "name": "/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro",
+                "physicalName": "/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro",
+                "createdAt": "2022-04-22T07:15:48.616894Z",
+                "updatedAt": "2022-04-22T07:16:51.492803Z",
+                "namespace": "file://f6b614756f19",
+                "sourceName": "file://f6b614756f19",
                 "fields": [
                     {
                         "name": "actor_id",
@@ -103,32 +103,32 @@
             "inEdges": [
                 {
                     "origin": "job:example:dag_dvdrental.export_actor",
-                    "destination": "dataset:file://11500c6cc2bb:dag_dvdrental_export_actor"
+                    "destination": "dataset:file://f6b614756f19:/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro"
                 }
             ],
             "outEdges": [
                 {
-                    "origin": "dataset:file://11500c6cc2bb:dag_dvdrental_export_actor",
+                    "origin": "dataset:file://f6b614756f19:/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro",
                     "destination": "job:example:dag_dvdrental.upload_actor"
                 }
             ]
         },
         {
-            "id": "dataset:gs://dionricky-personal:tokyo-skripsi.upload_actor",
+            "id": "dataset:gs://tokyo-skripsi:tokyo-skripsi.upload_actor",
             "type": "DATASET",
             "data": {
                 "type": "DATASET",
                 "id": {
-                    "namespace": "gs://dionricky-personal",
+                    "namespace": "gs://tokyo-skripsi",
                     "name": "tokyo-skripsi.upload_actor"
                 },
                 "type": "DB_TABLE",
                 "name": "tokyo-skripsi.upload_actor",
                 "physicalName": "tokyo-skripsi.upload_actor",
-                "createdAt": "2022-03-21T03:26:35.178045Z",
-                "updatedAt": "2022-03-21T03:27:41.770849Z",
-                "namespace": "gs://dionricky-personal",
-                "sourceName": "gs://dionricky-personal",
+                "createdAt": "2022-04-22T07:16:49.555367Z",
+                "updatedAt": "2022-04-22T07:17:56.006055Z",
+                "namespace": "gs://tokyo-skripsi",
+                "sourceName": "gs://tokyo-skripsi",
                 "fields": [],
                 "tags": [],
                 "lastModifiedAt": null,
@@ -137,32 +137,32 @@
             "inEdges": [
                 {
                     "origin": "job:example:dag_dvdrental.upload_actor",
-                    "destination": "dataset:gs://dionricky-personal:tokyo-skripsi.upload_actor"
+                    "destination": "dataset:gs://tokyo-skripsi:tokyo-skripsi.upload_actor"
                 }
             ],
             "outEdges": [
                 {
-                    "origin": "dataset:gs://dionricky-personal:tokyo-skripsi.upload_actor",
+                    "origin": "dataset:gs://tokyo-skripsi:tokyo-skripsi.upload_actor",
                     "destination": "job:example:dag_dvdrental.load_actor"
                 }
             ]
         },
         {
-            "id": "dataset:postgres://source-db:5432:dvdrental.public.actor",
+            "id": "dataset:postgres://postgres-db:5432:dvdrental.public.actor",
             "type": "DATASET",
             "data": {
                 "type": "DATASET",
                 "id": {
-                    "namespace": "postgres://source-db:5432",
+                    "namespace": "postgres://postgres-db:5432",
                     "name": "dvdrental.public.actor"
                 },
                 "type": "DB_TABLE",
                 "name": "dvdrental.public.actor",
                 "physicalName": "dvdrental.public.actor",
-                "createdAt": "2022-03-21T03:25:33.158672Z",
-                "updatedAt": "2022-03-21T03:25:33.809236Z",
-                "namespace": "postgres://source-db:5432",
-                "sourceName": "postgres://source-db:5432",
+                "createdAt": "2022-04-22T07:15:48.616894Z",
+                "updatedAt": "2022-04-22T07:15:49.288558Z",
+                "namespace": "postgres://postgres-db:5432",
+                "sourceName": "postgres://postgres-db:5432",
                 "fields": [],
                 "tags": [],
                 "lastModifiedAt": null,
@@ -171,7 +171,7 @@
             "inEdges": [],
             "outEdges": [
                 {
-                    "origin": "dataset:postgres://source-db:5432:dvdrental.public.actor",
+                    "origin": "dataset:postgres://postgres-db:5432:dvdrental.public.actor",
                     "destination": "job:example:dag_dvdrental.export_actor"
                 }
             ]
@@ -187,63 +187,63 @@
                 },
                 "type": "BATCH",
                 "name": "dag_dvdrental.export_actor",
-                "createdAt": "2022-03-21T03:25:33.158672Z",
-                "updatedAt": "2022-03-21T03:25:33.809236Z",
+                "createdAt": "2022-04-22T07:15:48.616894Z",
+                "updatedAt": "2022-04-22T07:15:49.288558Z",
                 "namespace": "example",
                 "inputs": [
                     {
-                        "namespace": "postgres://source-db:5432",
+                        "namespace": "postgres://postgres-db:5432",
                         "name": "dvdrental.public.actor"
                     }
                 ],
                 "outputs": [
                     {
-                        "namespace": "file://11500c6cc2bb",
-                        "name": "dag_dvdrental_export_actor"
+                        "namespace": "file://f6b614756f19",
+                        "name": "/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro"
                     }
                 ],
                 "location": null,
                 "context": {
-                    "sql": "\n    SELECT\n        actor_id,\n        first_name,\n        last_name,\n        last_update\n    FROM\n        actor\n    WHERE last_update BETWEEN '2022-03-20T00:00:00+00:00' AND '2022-03-21T00:00:00+00:00'\n    "
+                    "sql": "\n    SELECT\n        actor_id,\n        first_name,\n        last_name,\n        last_update\n    FROM\n        actor\n    WHERE last_update BETWEEN '2022-04-21T00:00:00+00:00' AND '2022-04-22T00:00:00+00:00'\n    "
                 },
                 "description": null,
                 "latestRun": {
-                    "id": "e657aa82-ced6-4841-afbc-7dc8171a7147",
-                    "createdAt": "2022-03-21T03:25:33.158672Z",
-                    "updatedAt": "2022-03-21T03:25:33.809236Z",
-                    "nominalStartTime": "2022-03-21T03:25:33.158672Z",
-                    "nominalEndTime": "2022-03-21T03:25:33.809236Z",
+                    "id": "a4f18743-bf62-463d-9d88-48967dca4b79",
+                    "createdAt": "2022-04-22T07:15:48.616894Z",
+                    "updatedAt": "2022-04-22T07:15:49.288558Z",
+                    "nominalStartTime": "2022-04-22T07:15:48.616894Z",
+                    "nominalEndTime": "2022-04-22T07:15:49.288558Z",
                     "state": "COMPLETED",
-                    "startedAt": "2022-03-21T03:25:33.158672Z",
-                    "endedAt": "2022-03-21T03:25:33.809236Z",
-                    "durationMs": 651,
+                    "startedAt": "2022-04-22T07:15:48.616894Z",
+                    "endedAt": "2022-04-22T07:15:49.288558Z",
+                    "durationMs": 672,
                     "args": {
-                        "nominal_start_time": "2022-03-21T03:25:33.158672Z[UTC]",
-                        "nominal_end_time": "2022-03-21T03:25:33.809236Z[UTC]"
+                        "nominal_start_time": "2022-04-22T07:15:48.616894Z[UTC]",
+                        "nominal_end_time": "2022-04-22T07:15:49.288558Z[UTC]"
                     },
                     "jobVersion": {
                         "namespace": "example",
                         "name": "dag_dvdrental.export_actor",
-                        "version": "34b5a544-2fcd-3113-b064-95716552501b"
+                        "version": "170ab170-40a7-32c7-9eda-19cab47f4d4b"
                     },
                     "inputVersions": [
                         {
-                            "namespace": "postgres://source-db:5432",
+                            "namespace": "postgres://postgres-db:5432",
                             "name": "dvdrental.public.actor",
-                            "version": "175d3e98-0af7-3a70-990e-9a0130bd51a3"
+                            "version": "2c6539c5-964f-3d31-9d1b-df5ae86369e1"
                         }
                     ],
                     "outputVersions": [
                         {
-                            "namespace": "file://11500c6cc2bb",
-                            "name": "dag_dvdrental_export_actor",
-                            "version": "176833ba-5f23-3f17-bc62-2f3b17e9cac7"
+                            "namespace": "file://f6b614756f19",
+                            "name": "/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro",
+                            "version": "cdd86507-14fa-3ec2-8fb7-efe01d529130"
                         }
                     ],
                     "context": {
                         "job.facets.sourceCodeLocation.type": "",
                         "job.facets.sourceCodeLocation.url": "/opt/airflow/dags/dag_dvdrental.py",
-                        "sql": "\n    SELECT\n        actor_id,\n        first_name,\n        last_name,\n        last_update\n    FROM\n        actor\n    WHERE last_update BETWEEN '2022-03-20T00:00:00+00:00' AND '2022-03-21T00:00:00+00:00'\n    "
+                        "sql": "\n    SELECT\n        actor_id,\n        first_name,\n        last_name,\n        last_update\n    FROM\n        actor\n    WHERE last_update BETWEEN '2022-04-21T00:00:00+00:00' AND '2022-04-22T00:00:00+00:00'\n    "
                     },
                     "facets": {
                         "parentRun": {
@@ -252,7 +252,7 @@
                                 "namespace": "example"
                             },
                             "run": {
-                                "runId": "scheduled__2022-03-20T00:00:00+00:00"
+                                "runId": "scheduled__2022-04-21T00:00:00+00:00"
                             },
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
                             "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/ParentRunFacet"
@@ -260,8 +260,8 @@
                         "nominalTime": {
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
                             "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/NominalTimeRunFacet",
-                            "nominalEndTime": "2022-03-21T03:25:33.809236Z",
-                            "nominalStartTime": "2022-03-21T03:25:33.158672Z"
+                            "nominalEndTime": "2022-04-22T07:15:49.288558Z",
+                            "nominalStartTime": "2022-04-22T07:15:48.616894Z"
                         },
                         "airflow_runArgs": {
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
@@ -270,7 +270,7 @@
                         },
                         "airflow_version": {
                             "operator": "contrib.operators.postgres_to_avro.PostgresToAvroOperator",
-                            "taskInfo": "{'task_id': 'export_actor', 'owner': 'dion-ricky', 'email': None, 'email_on_retry': True, 'email_on_failure': True, 'start_date': <Pendulum [2022-03-20T00:00:00+00:00]>, 'end_date': None, 'trigger_rule': 'all_success', 'depends_on_past': False, 'wait_for_downstream': False, '_schedule_interval': None, 'retries': 5, 'queue': 'default', 'pool': 'default_pool', 'pool_slots': 1, 'sla': None, 'execution_timeout': None, 'on_failure_callback': None, 'on_success_callback': None, 'on_retry_callback': None, 'retry_delay': datetime.timedelta(0, 600), 'retry_exponential_backoff': False, 'max_retry_delay': None, 'params': {}, 'priority_weight': 1, 'weight_rule': 'downstream', 'resources': None, 'run_as_user': None, 'task_concurrency': None, 'executor_config': {}, 'do_xcom_push': True, '_upstream_task_ids': {'start_dag_dvdrental'}, '_downstream_task_ids': {'upload_actor'}, '_dag': <DAG: dag_dvdrental>, 'subdag': None, '_log': <Logger airflow.task.operators (INFO)>, 'inlets': [], 'outlets': [], 'lineage_data': None, '_inlets': {'auto': False, 'task_ids': [], 'datasets': []}, '_outlets': {'datasets': []}, 'sql': \"\\n    SELECT\\n        actor_id,\\n        first_name,\\n        last_name,\\n        last_update\\n    FROM\\n        actor\\n    WHERE last_update BETWEEN '2022-03-20T00:00:00+00:00' AND '2022-03-21T00:00:00+00:00'\\n    \", 'avro_schema_path': '/opt/airflow/dags/schemas/avro/dvdrental/actor.avsc', 'avro_output_path': '/opt/temp/airflow_tmp/dag_dvdrental_20220320000000/actor_20220320000000.avro', 'avro_codec': 'snappy', 'postgres_conn_id': 'ds_dvdrental', 'error_file_path': None, 'chunk_size': 10000, 'generate_sid': False, 'time_partition_key': None}",
+                            "taskInfo": "{'task_id': 'export_actor', 'owner': 'dion-ricky', 'email': None, 'email_on_retry': True, 'email_on_failure': True, 'start_date': <Pendulum [2022-04-21T00:00:00+00:00]>, 'end_date': None, 'trigger_rule': 'all_success', 'depends_on_past': False, 'wait_for_downstream': False, '_schedule_interval': None, 'retries': 5, 'queue': 'default', 'pool': 'default_pool', 'pool_slots': 1, 'sla': None, 'execution_timeout': None, 'on_failure_callback': None, 'on_success_callback': None, 'on_retry_callback': None, 'retry_delay': datetime.timedelta(0, 600), 'retry_exponential_backoff': False, 'max_retry_delay': None, 'params': {}, 'priority_weight': 1, 'weight_rule': 'downstream', 'resources': None, 'run_as_user': None, 'task_concurrency': None, 'executor_config': {}, 'do_xcom_push': True, '_upstream_task_ids': {'start_dag_dvdrental'}, '_downstream_task_ids': {'upload_actor'}, '_dag': <DAG: dag_dvdrental>, 'subdag': None, '_log': <Logger airflow.task.operators (INFO)>, 'inlets': [], 'outlets': [], 'lineage_data': None, '_inlets': {'auto': False, 'task_ids': [], 'datasets': []}, '_outlets': {'datasets': []}, 'sql': \"\\n    SELECT\\n        actor_id,\\n        first_name,\\n        last_name,\\n        last_update\\n    FROM\\n        actor\\n    WHERE last_update BETWEEN '2022-04-21T00:00:00+00:00' AND '2022-04-22T00:00:00+00:00'\\n    \", 'avro_schema_path': '/opt/airflow/dags/schemas/avro/dvdrental/actor.avsc', 'avro_output_path': '/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro', 'avro_codec': 'snappy', 'postgres_conn_id': 'ds_dvdrental', 'error_file_path': None, 'chunk_size': 10000, 'generate_sid': False, 'time_partition_key': None}",
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
                             "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/BaseFacet",
                             "airflowVersion": "1.10.12",
@@ -281,14 +281,14 @@
             },
             "inEdges": [
                 {
-                    "origin": "dataset:postgres://source-db:5432:dvdrental.public.actor",
+                    "origin": "dataset:postgres://postgres-db:5432:dvdrental.public.actor",
                     "destination": "job:example:dag_dvdrental.export_actor"
                 }
             ],
             "outEdges": [
                 {
                     "origin": "job:example:dag_dvdrental.export_actor",
-                    "destination": "dataset:file://11500c6cc2bb:dag_dvdrental_export_actor"
+                    "destination": "dataset:file://f6b614756f19:/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro"
                 }
             ]
         },
@@ -303,18 +303,18 @@
                 },
                 "type": "BATCH",
                 "name": "dag_dvdrental.load_actor",
-                "createdAt": "2022-03-21T03:27:35.320837Z",
-                "updatedAt": "2022-03-21T03:27:41.770849Z",
+                "createdAt": "2022-04-22T07:17:49.318319Z",
+                "updatedAt": "2022-04-22T07:17:56.006055Z",
                 "namespace": "example",
                 "inputs": [
                     {
-                        "namespace": "gs://dionricky-personal",
+                        "namespace": "gs://tokyo-skripsi",
                         "name": "tokyo-skripsi.upload_actor"
                     }
                 ],
                 "outputs": [
                     {
-                        "namespace": "bigquery://dionricky-personal",
+                        "namespace": "bigquery",
                         "name": "source.actor"
                     }
                 ],
@@ -322,36 +322,36 @@
                 "context": {},
                 "description": null,
                 "latestRun": {
-                    "id": "9eb59690-4770-4941-8a57-98d097d87b6d",
-                    "createdAt": "2022-03-21T03:27:35.320837Z",
-                    "updatedAt": "2022-03-21T03:27:41.770849Z",
-                    "nominalStartTime": "2022-03-21T03:27:35.320837Z",
-                    "nominalEndTime": "2022-03-21T03:27:41.770849Z",
+                    "id": "81faa819-b93c-417f-8605-ba249975be63",
+                    "createdAt": "2022-04-22T07:17:49.318319Z",
+                    "updatedAt": "2022-04-22T07:17:56.006055Z",
+                    "nominalStartTime": "2022-04-22T07:17:49.318319Z",
+                    "nominalEndTime": "2022-04-22T07:17:56.006055Z",
                     "state": "COMPLETED",
-                    "startedAt": "2022-03-21T03:27:35.320837Z",
-                    "endedAt": "2022-03-21T03:27:41.770849Z",
-                    "durationMs": 6450,
+                    "startedAt": "2022-04-22T07:17:49.318319Z",
+                    "endedAt": "2022-04-22T07:17:56.006055Z",
+                    "durationMs": 6688,
                     "args": {
-                        "nominal_start_time": "2022-03-21T03:27:35.320837Z[UTC]",
-                        "nominal_end_time": "2022-03-21T03:27:41.770849Z[UTC]"
+                        "nominal_start_time": "2022-04-22T07:17:49.318319Z[UTC]",
+                        "nominal_end_time": "2022-04-22T07:17:56.006055Z[UTC]"
                     },
                     "jobVersion": {
                         "namespace": "example",
                         "name": "dag_dvdrental.load_actor",
-                        "version": "b3b1b02d-b220-3c1a-84c1-8adbc476795f"
+                        "version": "b8655c50-d940-3e89-9574-39427fd23bee"
                     },
                     "inputVersions": [
                         {
-                            "namespace": "gs://dionricky-personal",
+                            "namespace": "gs://tokyo-skripsi",
                             "name": "tokyo-skripsi.upload_actor",
-                            "version": "d41ce213-1fb7-34ad-a04c-b5962e256802"
+                            "version": "b7e07ad8-f4aa-3d95-9398-b8df715529c1"
                         }
                     ],
                     "outputVersions": [
                         {
-                            "namespace": "bigquery://dionricky-personal",
+                            "namespace": "bigquery",
                             "name": "source.actor",
-                            "version": "fbe48bf5-d46c-3bf0-8f9c-d9ee30a1d006"
+                            "version": "0a7b2bc8-cd29-30d9-8778-1c28e32defa3"
                         }
                     ],
                     "context": {
@@ -365,7 +365,7 @@
                                 "namespace": "example"
                             },
                             "run": {
-                                "runId": "scheduled__2022-03-20T00:00:00+00:00"
+                                "runId": "scheduled__2022-04-21T00:00:00+00:00"
                             },
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
                             "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/ParentRunFacet"
@@ -373,8 +373,8 @@
                         "nominalTime": {
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
                             "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/NominalTimeRunFacet",
-                            "nominalEndTime": "2022-03-21T03:27:41.770849Z",
-                            "nominalStartTime": "2022-03-21T03:27:35.320837Z"
+                            "nominalEndTime": "2022-04-22T07:17:56.006055Z",
+                            "nominalStartTime": "2022-04-22T07:17:49.318319Z"
                         },
                         "airflow_runArgs": {
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
@@ -383,7 +383,7 @@
                         },
                         "airflow_version": {
                             "operator": "airflow.contrib.operators.gcs_to_bq.GoogleCloudStorageToBigQueryOperator",
-                            "taskInfo": "{'task_id': 'load_actor', 'owner': 'dion-ricky', 'email': None, 'email_on_retry': True, 'email_on_failure': True, 'start_date': <Pendulum [2022-03-20T00:00:00+00:00]>, 'end_date': None, 'trigger_rule': 'all_success', 'depends_on_past': False, 'wait_for_downstream': False, '_schedule_interval': None, 'retries': 5, 'queue': 'default', 'pool': 'default_pool', 'pool_slots': 1, 'sla': None, 'execution_timeout': None, 'on_failure_callback': None, 'on_success_callback': None, 'on_retry_callback': None, 'retry_delay': datetime.timedelta(0, 600), 'retry_exponential_backoff': False, 'max_retry_delay': None, 'params': {}, 'priority_weight': 1, 'weight_rule': 'downstream', 'resources': None, 'run_as_user': None, 'task_concurrency': None, 'executor_config': {}, 'do_xcom_push': True, '_upstream_task_ids': {'upload_actor'}, '_downstream_task_ids': {'finish_dag_dvdrental'}, '_dag': <DAG: dag_dvdrental>, 'subdag': None, '_log': <Logger airflow.task.operators (INFO)>, 'inlets': [], 'outlets': [], 'lineage_data': None, '_inlets': {'auto': False, 'task_ids': [], 'datasets': []}, '_outlets': {'datasets': []}, 'bucket': 'tokyo-skripsi', 'source_objects': ['airflow/dag_dvdrental/actor/actor_20220320000000.avro'], 'schema_object': None, 'destination_project_dataset_table': 'source.actor', 'schema_fields': [{'name': 'actor_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'first_name', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'last_name', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'last_update', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}], 'source_format': 'AVRO', 'compression': 'NONE', 'create_disposition': 'CREATE_IF_NEEDED', 'skip_leading_rows': 0, 'write_disposition': 'WRITE_APPEND', 'field_delimiter': ',', 'max_bad_records': 0, 'quote_character': None, 'ignore_unknown_values': False, 'allow_quoted_newlines': False, 'allow_jagged_rows': False, 'external_table': False, 'encoding': 'UTF-8', 'max_id_key': None, 'bigquery_conn_id': 'gcp_conn', 'google_cloud_storage_conn_id': 'gcp_conn', 'delegate_to': None, 'schema_update_options': (), 'src_fmt_configs': {}, 'time_partitioning': {}, 'cluster_fields': None, 'autodetect': True, 'encryption_configuration': None}",
+                            "taskInfo": "{'task_id': 'load_actor', 'owner': 'dion-ricky', 'email': None, 'email_on_retry': True, 'email_on_failure': True, 'start_date': <Pendulum [2022-04-21T00:00:00+00:00]>, 'end_date': None, 'trigger_rule': 'all_success', 'depends_on_past': False, 'wait_for_downstream': False, '_schedule_interval': None, 'retries': 5, 'queue': 'default', 'pool': 'default_pool', 'pool_slots': 1, 'sla': None, 'execution_timeout': None, 'on_failure_callback': None, 'on_success_callback': None, 'on_retry_callback': None, 'retry_delay': datetime.timedelta(0, 600), 'retry_exponential_backoff': False, 'max_retry_delay': None, 'params': {}, 'priority_weight': 1, 'weight_rule': 'downstream', 'resources': None, 'run_as_user': None, 'task_concurrency': None, 'executor_config': {}, 'do_xcom_push': True, '_upstream_task_ids': {'upload_actor'}, '_downstream_task_ids': {'wait_dag_dvdrental'}, '_dag': <DAG: dag_dvdrental>, 'subdag': None, '_log': <Logger airflow.task.operators (INFO)>, 'inlets': [], 'outlets': [], 'lineage_data': None, '_inlets': {'auto': False, 'task_ids': [], 'datasets': []}, '_outlets': {'datasets': []}, 'bucket': 'tokyo-skripsi', 'source_objects': ['airflow/dag_dvdrental/actor/actor_20220421000000.avro'], 'schema_object': None, 'destination_project_dataset_table': 'source.actor', 'schema_fields': [{'name': 'actor_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'first_name', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'last_name', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'last_update', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}], 'source_format': 'AVRO', 'compression': 'NONE', 'create_disposition': 'CREATE_IF_NEEDED', 'skip_leading_rows': 0, 'write_disposition': 'WRITE_APPEND', 'field_delimiter': ',', 'max_bad_records': 0, 'quote_character': None, 'ignore_unknown_values': False, 'allow_quoted_newlines': False, 'allow_jagged_rows': False, 'external_table': False, 'encoding': 'UTF-8', 'max_id_key': None, 'bigquery_conn_id': 'gcp_conn', 'google_cloud_storage_conn_id': 'gcp_conn', 'delegate_to': None, 'schema_update_options': (), 'src_fmt_configs': {}, 'time_partitioning': {}, 'cluster_fields': None, 'autodetect': True, 'encryption_configuration': None}",
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
                             "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/BaseFacet",
                             "airflowVersion": "1.10.12",
@@ -394,14 +394,14 @@
             },
             "inEdges": [
                 {
-                    "origin": "dataset:gs://dionricky-personal:tokyo-skripsi.upload_actor",
+                    "origin": "dataset:gs://tokyo-skripsi:tokyo-skripsi.upload_actor",
                     "destination": "job:example:dag_dvdrental.load_actor"
                 }
             ],
             "outEdges": [
                 {
                     "origin": "job:example:dag_dvdrental.load_actor",
-                    "destination": "dataset:bigquery://dionricky-personal:source.actor"
+                    "destination": "dataset:bigquery:source.actor"
                 }
             ]
         },
@@ -416,18 +416,18 @@
                 },
                 "type": "BATCH",
                 "name": "dag_dvdrental.upload_actor",
-                "createdAt": "2022-03-21T03:26:35.178045Z",
-                "updatedAt": "2022-03-21T03:26:36.055667Z",
+                "createdAt": "2022-04-22T07:16:49.555367Z",
+                "updatedAt": "2022-04-22T07:16:51.492803Z",
                 "namespace": "example",
                 "inputs": [
                     {
-                        "namespace": "file://11500c6cc2bb",
-                        "name": "dag_dvdrental_export_actor"
+                        "namespace": "file://f6b614756f19",
+                        "name": "/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro"
                     }
                 ],
                 "outputs": [
                     {
-                        "namespace": "gs://dionricky-personal",
+                        "namespace": "gs://tokyo-skripsi",
                         "name": "tokyo-skripsi.upload_actor"
                     }
                 ],
@@ -435,36 +435,36 @@
                 "context": {},
                 "description": null,
                 "latestRun": {
-                    "id": "0bb7087b-b694-4612-a7b9-2853b527b28d",
-                    "createdAt": "2022-03-21T03:26:35.178045Z",
-                    "updatedAt": "2022-03-21T03:26:36.055667Z",
-                    "nominalStartTime": "2022-03-21T03:26:35.178045Z",
-                    "nominalEndTime": "2022-03-21T03:26:36.055667Z",
+                    "id": "eb1058ac-5ce0-4cde-87e6-7cf72f0dbc19",
+                    "createdAt": "2022-04-22T07:16:49.555367Z",
+                    "updatedAt": "2022-04-22T07:16:51.492803Z",
+                    "nominalStartTime": "2022-04-22T07:16:49.555367Z",
+                    "nominalEndTime": "2022-04-22T07:16:51.492803Z",
                     "state": "COMPLETED",
-                    "startedAt": "2022-03-21T03:26:35.178045Z",
-                    "endedAt": "2022-03-21T03:26:36.055667Z",
-                    "durationMs": 877,
+                    "startedAt": "2022-04-22T07:16:49.555367Z",
+                    "endedAt": "2022-04-22T07:16:51.492803Z",
+                    "durationMs": 1937,
                     "args": {
-                        "nominal_start_time": "2022-03-21T03:26:35.178045Z[UTC]",
-                        "nominal_end_time": "2022-03-21T03:26:36.055667Z[UTC]"
+                        "nominal_start_time": "2022-04-22T07:16:49.555367Z[UTC]",
+                        "nominal_end_time": "2022-04-22T07:16:51.492803Z[UTC]"
                     },
                     "jobVersion": {
                         "namespace": "example",
                         "name": "dag_dvdrental.upload_actor",
-                        "version": "88d82d8b-4c9b-3dc3-8a6e-6300a70deca6"
+                        "version": "cf88d2b3-125c-329a-a8e4-ac0f5a09d4fe"
                     },
                     "inputVersions": [
                         {
-                            "namespace": "file://11500c6cc2bb",
-                            "name": "dag_dvdrental_export_actor",
-                            "version": "176833ba-5f23-3f17-bc62-2f3b17e9cac7"
+                            "namespace": "file://f6b614756f19",
+                            "name": "/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro",
+                            "version": "cdd86507-14fa-3ec2-8fb7-efe01d529130"
                         }
                     ],
                     "outputVersions": [
                         {
-                            "namespace": "gs://dionricky-personal",
+                            "namespace": "gs://tokyo-skripsi",
                             "name": "tokyo-skripsi.upload_actor",
-                            "version": "d41ce213-1fb7-34ad-a04c-b5962e256802"
+                            "version": "b7e07ad8-f4aa-3d95-9398-b8df715529c1"
                         }
                     ],
                     "context": {
@@ -478,7 +478,7 @@
                                 "namespace": "example"
                             },
                             "run": {
-                                "runId": "scheduled__2022-03-20T00:00:00+00:00"
+                                "runId": "scheduled__2022-04-21T00:00:00+00:00"
                             },
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
                             "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/ParentRunFacet"
@@ -486,8 +486,8 @@
                         "nominalTime": {
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
                             "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/NominalTimeRunFacet",
-                            "nominalEndTime": "2022-03-21T03:26:36.055667Z",
-                            "nominalStartTime": "2022-03-21T03:26:35.178045Z"
+                            "nominalEndTime": "2022-04-22T07:16:51.492803Z",
+                            "nominalStartTime": "2022-04-22T07:16:49.555367Z"
                         },
                         "airflow_runArgs": {
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
@@ -496,7 +496,7 @@
                         },
                         "airflow_version": {
                             "operator": "airflow.contrib.operators.file_to_gcs.FileToGoogleCloudStorageOperator",
-                            "taskInfo": "{'task_id': 'upload_actor', 'owner': 'dion-ricky', 'email': None, 'email_on_retry': True, 'email_on_failure': True, 'start_date': <Pendulum [2022-03-20T00:00:00+00:00]>, 'end_date': None, 'trigger_rule': 'all_success', 'depends_on_past': False, 'wait_for_downstream': False, '_schedule_interval': None, 'retries': 5, 'queue': 'default', 'pool': 'default_pool', 'pool_slots': 1, 'sla': None, 'execution_timeout': None, 'on_failure_callback': None, 'on_success_callback': None, 'on_retry_callback': None, 'retry_delay': datetime.timedelta(0, 600), 'retry_exponential_backoff': False, 'max_retry_delay': None, 'params': {}, 'priority_weight': 1, 'weight_rule': 'downstream', 'resources': None, 'run_as_user': None, 'task_concurrency': None, 'executor_config': {}, 'do_xcom_push': True, '_upstream_task_ids': {'export_actor'}, '_downstream_task_ids': {'load_actor'}, '_dag': <DAG: dag_dvdrental>, 'subdag': None, '_log': <Logger airflow.task.operators (INFO)>, 'inlets': [], 'outlets': [], 'lineage_data': None, '_inlets': {'auto': False, 'task_ids': [], 'datasets': []}, '_outlets': {'datasets': []}, 'src': '/opt/temp/airflow_tmp/dag_dvdrental_20220320000000/actor_20220320000000.avro', 'dst': 'airflow/dag_dvdrental/actor/actor_20220320000000.avro', 'bucket': 'tokyo-skripsi', 'google_cloud_storage_conn_id': 'gcp_conn', 'mime_type': 'application/octet-stream', 'delegate_to': None, 'gzip': False}",
+                            "taskInfo": "{'task_id': 'upload_actor', 'owner': 'dion-ricky', 'email': None, 'email_on_retry': True, 'email_on_failure': True, 'start_date': <Pendulum [2022-04-21T00:00:00+00:00]>, 'end_date': None, 'trigger_rule': 'all_success', 'depends_on_past': False, 'wait_for_downstream': False, '_schedule_interval': None, 'retries': 5, 'queue': 'default', 'pool': 'default_pool', 'pool_slots': 1, 'sla': None, 'execution_timeout': None, 'on_failure_callback': None, 'on_success_callback': None, 'on_retry_callback': None, 'retry_delay': datetime.timedelta(0, 600), 'retry_exponential_backoff': False, 'max_retry_delay': None, 'params': {}, 'priority_weight': 1, 'weight_rule': 'downstream', 'resources': None, 'run_as_user': None, 'task_concurrency': None, 'executor_config': {}, 'do_xcom_push': True, '_upstream_task_ids': {'export_actor'}, '_downstream_task_ids': {'load_actor'}, '_dag': <DAG: dag_dvdrental>, 'subdag': None, '_log': <Logger airflow.task.operators (INFO)>, 'inlets': [], 'outlets': [], 'lineage_data': None, '_inlets': {'auto': False, 'task_ids': [], 'datasets': []}, '_outlets': {'datasets': []}, 'src': '/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro', 'dst': 'airflow/dag_dvdrental/actor/actor_20220421000000.avro', 'bucket': 'tokyo-skripsi', 'google_cloud_storage_conn_id': 'gcp_conn', 'mime_type': 'application/octet-stream', 'delegate_to': None, 'gzip': False}",
                             "_producer": "https://github.com/OpenLineage/OpenLineage/tree/0.5.1/integration/airflow",
                             "_schemaURL": "https://raw.githubusercontent.com/OpenLineage/OpenLineage/main/spec/OpenLineage.json#/definitions/BaseFacet",
                             "airflowVersion": "1.10.12",
@@ -507,14 +507,14 @@
             },
             "inEdges": [
                 {
-                    "origin": "dataset:file://11500c6cc2bb:dag_dvdrental_export_actor",
+                    "origin": "dataset:file://f6b614756f19:/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro",
                     "destination": "job:example:dag_dvdrental.upload_actor"
                 }
             ],
             "outEdges": [
                 {
                     "origin": "job:example:dag_dvdrental.upload_actor",
-                    "destination": "dataset:gs://dionricky-personal:tokyo-skripsi.upload_actor"
+                    "destination": "dataset:gs://tokyo-skripsi:tokyo-skripsi.upload_actor"
                 }
             ]
         }

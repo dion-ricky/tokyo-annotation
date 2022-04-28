@@ -15,7 +15,7 @@ class OpenLineageClientFacade:
         cls,
         openlineage_url: str,
         openlineage_client_options: Optional[OpenLineageClientOptions] \
-                                        = OpenLineageClientOptions
+                                        = OpenLineageClientOptions()
     ):
         openlineage_client = OpenLineageClient(
                                 url=openlineage_url,
@@ -43,8 +43,8 @@ class OpenLineageClientFacade:
     
     def get(self, path, params = None):
         resp = self.session.get(
-            urljoin(self.url, path),
-            params,
+            url=urljoin(self.url, path),
+            params=params,
             timeout=self.options.timeout,
             verify=self.options.verify
         )

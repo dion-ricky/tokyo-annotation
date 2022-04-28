@@ -47,6 +47,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node0",
             "type": "DATASET",
+            "data": "",
             "inEdges": [],
             "outEdges": []
         }
@@ -82,6 +83,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node0",
             "type": "DATASET",
+            "data": "",
             "inEdges": [],
             "outEdges": [
                 {
@@ -93,6 +95,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node1",
             "type": "JOB",
+            "data": "",
             "inEdges": [],
             "outEdges": [
                 {
@@ -104,6 +107,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node2",
             "type": "DATASET",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node0",
@@ -119,6 +123,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node3",
             "type": "DATASET",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node1",
@@ -187,6 +192,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node0",
             "type": "DATASET",
+            "data": "",
             "inEdges": [],
             "outEdges": [
                 {
@@ -202,6 +208,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node1",
             "type": "JOB",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node0",
@@ -218,6 +225,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node2",
             "type": "DATASET",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node0",
@@ -233,6 +241,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node3",
             "type": "DATASET",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node1",
@@ -268,6 +277,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node0",
             "type": "DATASET",
+            "data": "",
             "inEdges": [],
             "outEdges": [
                 {
@@ -279,6 +289,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node1",
             "type": "JOB",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node0",
@@ -295,6 +306,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node2",
             "type": "DATASET",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node1",
@@ -311,6 +323,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node3",
             "type": "JOB",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node2",
@@ -327,6 +340,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node4",
             "type": "DATASET",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node3",
@@ -363,6 +377,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node0",
             "type": "DATASET",
+            "data": "",
             "inEdges": [],
             "outEdges": [
                 {
@@ -374,6 +389,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node1",
             "type": "DATASET",
+            "data": "",
             "inEdges": [],
             "outEdges": [
                 {
@@ -385,6 +401,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node2",
             "type": "DATASET",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node0",
@@ -405,6 +422,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node3",
             "type": "DATASET",
+            "data": "",
             "inEdges": [
                 {
                     "origin": "node2",
@@ -416,6 +434,7 @@ class TestLineage(unittest.TestCase):
         {
             "id": "node4",
             "type": "DATASET",
+            "data": "",
             "inEdges": [],
             "outEdges": [
                 {

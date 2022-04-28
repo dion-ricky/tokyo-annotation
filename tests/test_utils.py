@@ -387,10 +387,10 @@ class TestUtils(unittest.TestCase):
 
         self.assertEqual(graph.dimension, 7)
 
-        self.assertEqual(map[0], DataNode(id='dataset:bigquery://dionricky-personal:source.actor', type='DATASET'))
-        self.assertEqual(map[1], DataNode(id='dataset:file://11500c6cc2bb:dag_dvdrental_export_actor', type='DATASET'))
-        self.assertEqual(map[2], DataNode(id='dataset:gs://dionricky-personal:tokyo-skripsi.upload_actor', type='DATASET'))
-        self.assertEqual(map[3], DataNode(id='dataset:postgres://source-db:5432:dvdrental.public.actor', type='DATASET'))
+        self.assertEqual(map[0], DataNode(id='dataset:bigquery:source.actor', type='DATASET'))
+        self.assertEqual(map[1], DataNode(id='dataset:file://f6b614756f19:/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro', type='DATASET'))
+        self.assertEqual(map[2], DataNode(id='dataset:gs://tokyo-skripsi:tokyo-skripsi.upload_actor', type='DATASET'))
+        self.assertEqual(map[3], DataNode(id='dataset:postgres://postgres-db:5432:dvdrental.public.actor', type='DATASET'))
         self.assertEqual(map[4], JobNode(id='job:example:dag_dvdrental.export_actor', type='JOB'))
         self.assertEqual(map[5], JobNode(id='job:example:dag_dvdrental.load_actor', type='JOB'))
         self.assertEqual(map[6], JobNode(id='job:example:dag_dvdrental.upload_actor', type='JOB'))
