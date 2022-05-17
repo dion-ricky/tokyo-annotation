@@ -1,7 +1,7 @@
 from distutils.core import setup
 from setuptools import find_namespace_packages
 
-VERSION = '0.1a1'
+VERSION = '0.1a2'
 
 setup(
     name="tokyo-annotation",
@@ -12,7 +12,7 @@ setup(
     author="Dion Ricky Saputra",
     author_email="code@dionricky.com",
     url="https://github.com/dion-ricky/tokyo-annotation",
-    download_url="https://github.com/dion-ricky/tokyo-annotation/releases/download/0.1a1/tokyo-annotation-0.1a1.tar.gz",
+    download_url="https://github.com/dion-ricky/tokyo-annotation/releases/download/0.1a2/tokyo-annotation-0.1a2.tar.gz",
     keywords=["data annotation"],
     install_requires=[
         "attrs==21.4.0",
