@@ -4,6 +4,7 @@ import attr
 class Node:
     id: str = attr.ib(default=None)
     type: str = attr.ib(default=None)
+    meta: dict = attr.ib(default=None)
 
     def __eq__(self, __o: object) -> bool:
         return self.id == __o.id

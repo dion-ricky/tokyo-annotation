@@ -2,8 +2,8 @@ import json
 import unittest
 
 from tokyo_annotation.utils import LinkedList, Node, Map, DiGraph
-from tokyo_annotation.utils.lineage import parse_lineage_from_marquez
-from tokyo_annotation.models.lineage import DataNode, JobNode
+from tokyo_annotation.utils.lineage import parse_raw_lineage
+from tokyo_annotation.models.node import DataNode, JobNode
 
 class TestUtils(unittest.TestCase):
     def test_node_data(self):
@@ -379,7 +379,7 @@ class TestUtils(unittest.TestCase):
 
     def test_parse_lineage_from_marquez(self):
         _f = open('documentation/get_lineage', 'r')
-        lineage = parse_lineage_from_marquez(_f.read())
+        lineage = parse_raw_lineage(_f.read())
         _f.close()
         
         graph = lineage.graph
@@ -387,10 +387,10 @@ class TestUtils(unittest.TestCase):
 
         self.assertEqual(graph.dimension, 7)
 
-        self.assertEqual(map[0], DataNode(id='dataset:bigquery://dionricky-personal:source.actor', type='DATASET'))
-        self.assertEqual(map[1], DataNode(id='dataset:file://11500c6cc2bb:dag_dvdrental_export_actor', type='DATASET'))
-        self.assertEqual(map[2], DataNode(id='dataset:gs://dionricky-personal:tokyo-skripsi.upload_actor', type='DATASET'))
-        self.assertEqual(map[3], DataNode(id='dataset:postgres://source-db:5432:dvdrental.public.actor', type='DATASET'))
+        self.assertEqual(map[0], DataNode(id='dataset:bigquery:source.actor', type='DATASET'))
+        self.assertEqual(map[1], DataNode(id='dataset:file://f6b614756f19:/opt/temp/airflow_tmp/dag_dvdrental_20220421000000/actor_20220421000000.avro', type='DATASET'))
+        self.assertEqual(map[2], DataNode(id='dataset:gs://tokyo-skripsi:tokyo-skripsi.upload_actor', type='DATASET'))
+        self.assertEqual(map[3], DataNode(id='dataset:postgres://postgres-db:5432:dvdrental.public.actor', type='DATASET'))
         self.assertEqual(map[4], JobNode(id='job:example:dag_dvdrental.export_actor', type='JOB'))
         self.assertEqual(map[5], JobNode(id='job:example:dag_dvdrental.load_actor', type='JOB'))
         self.assertEqual(map[6], JobNode(id='job:example:dag_dvdrental.upload_actor', type='JOB'))
