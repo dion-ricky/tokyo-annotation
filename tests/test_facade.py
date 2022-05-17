@@ -7,7 +7,7 @@ class TestFacade(unittest.TestCase):
     def __init__(self, methodName: str = ...) -> None:
         super().__init__(methodName)
 
-        self.MARQUEZ_IP = '35.209.147.240'
+        self.MARQUEZ_IP = 'localhost'
         self.MARQUEZ_PORT = '5000'
         self.MARQUEZ_URL = f'http://{self.MARQUEZ_IP}:{self.MARQUEZ_PORT}'
 
