@@ -14,18 +14,18 @@ class TestFacade(unittest.TestCase):
     def test_init_from_url(self):
         annot = Annotation.from_openlineage_url(
             namespace='bigquery',
-            dataset_name='source.actor',
+            dataset_name='alberta.actor',
             openlineage_url=self.MARQUEZ_URL)
         
-        self.assertEqual(annot.node_id, 'dataset:bigquery:source.actor')
-        self.assertEqual(annot.node.id, 'dataset:bigquery:source.actor')
+        self.assertEqual(annot.node_id, 'dataset:bigquery:alberta.actor')
+        self.assertEqual(annot.node.id, 'dataset:bigquery:alberta.actor')
         self.assertEqual(annot.node.meta['namespace'], 'bigquery')
-        self.assertEqual(annot.node.meta['name'], 'source.actor')
+        self.assertEqual(annot.node.meta['name'], 'alberta.actor')
     
     def test_annotation(self):
         annot = Annotation.from_openlineage_url(
             namespace='bigquery',
-            dataset_name='source.address',
+            dataset_name='alberta.customer',
             openlineage_url=self.MARQUEZ_URL)
         
         print(annot.get())
