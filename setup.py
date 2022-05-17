@@ -5,7 +5,7 @@ VERSION = '0.1a1'
 
 setup(
     name="tokyo-annotation",
-    packages=find_namespace_packages(include=['tokyo_annotation.*']),
+    packages=find_namespace_packages('tokyo_annotation', include=['tokyo_annotation.*']),
     version=VERSION,
     license="MIT",
     description="Tokyo Annotation",
