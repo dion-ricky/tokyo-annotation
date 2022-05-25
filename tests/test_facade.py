@@ -25,7 +25,7 @@ class TestFacade(unittest.TestCase):
     def test_annotation(self):
         annot = Annotation.from_openlineage_url(
             namespace='bigquery',
-            dataset_name='alberta.customer',
+            dataset_name='dionricky-personal.warehouse.customer_dimension',
             openlineage_url=self.MARQUEZ_URL)
         
         print(annot.get())
