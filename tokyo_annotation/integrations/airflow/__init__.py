@@ -1,1 +1,0 @@
-from tokyo_annotation.integrations.airflow.annotation_propagation_operator import AnnotationPropagationOperator

@@ -1,7 +1,7 @@
 import json
 import posixpath
 from urllib.parse import quote_plus
-from typing import Any, Type, Optional
+from typing import Type, Optional
 
 from openlineage.client import OpenLineageClientOptions
 
