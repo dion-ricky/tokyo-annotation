@@ -29,3 +29,11 @@ class TestFacade(unittest.TestCase):
             openlineage_url=self.MARQUEZ_URL)
         
         print(annot.get())
+    
+    def test_annotation_no_genesis(self):
+        annot = Annotation.from_openlineage_url(
+            namespace='postgres://10.128.0.20:5432',
+            dataset_name='dvdrental.public.customer',
+            openlineage_url=self.MARQUEZ_URL)
+        
+        print(annot.get())

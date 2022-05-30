@@ -41,12 +41,16 @@ class Facade:
 
         annotations = {}
 
-        for node in genesis:
-            if node.type == 'DATASET':
-                annotation = self._get_annotation(node)
-                if annotation:
-                    annotations[node.id] = annotation
-        
+        if len(genesis) == 0:
+            node = self.node
+            annotations[node.id] = self._get_annotation(node)
+        else:
+            for node in genesis:
+                if node.type == 'DATASET':
+                    annotation = self._get_annotation(node)
+                    if annotation:
+                        annotations[node.id] = annotation
+
         return annotations
 
     @classmethod
