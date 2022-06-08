@@ -28,7 +28,7 @@ def get_upstream(
 def get_upstream_recursive(
         node: Type[Node],
         lineage: Lineage
-    ):
+    ) -> List[Node]:
         upstreams = get_upstream(node, lineage)
 
         all_upstreams = []

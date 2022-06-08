@@ -10,7 +10,8 @@ from tokyo_annotation.adapter import OpenLineageClientFacade
 from tokyo_annotation.utils.lineage import (
     Lineage,
     parse_raw_lineage,
-    get_genesis_datasets
+    get_genesis_datasets,
+    get_upstream_recursive
 )
 
 
@@ -53,6 +54,25 @@ class Facade:
                     if annotation:
                         annotations[node.id] = annotation
 
+        return annotations
+
+    def get_all(self):
+        upstreams = get_upstream_recursive(self.node, self.lineage)
+
+        annotations = {}
+
+        if len(upstreams) == 0:
+            node = self.node
+            annotation = self._get_annotation(node)
+            if annotation:
+                annotations[node.id] = annotation
+        else:
+            for node in upstreams:
+                if node.type == 'DATASET':
+                    annotation = self._get_annotation(node)
+                    if annotation:
+                        annotations[node.id] = annotation
+        
         return annotations
 
     @classmethod
